@@ -1,11 +1,16 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  extends: [
-    'plugin:@typescript-eslint/recommended'
-  ],
+  root: true,
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: 'module'
+    sourceType: "module"
   },
-  rules: {}
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  rules: {
+    semi: ["error", "always"],
+    quotes: ["error", "double"]
+  }
 };

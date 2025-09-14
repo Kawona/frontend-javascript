@@ -39,7 +39,4 @@ studentsList.forEach((student) => {
 });
 
 table.appendChild(tbody);
-const root = document.getElementById("root");
-if (root) {
-  root.appendChild(table);
-}
+document.body.appendChild(table);

@@ -115,6 +115,18 @@ function createEmployee(salary: number | string): Director | TeacherClass {
   }
 }
 
+function isDirector(employee: Director | TeacherClass): employee is Director {
+    return employee instanceof Director;
+}
+
+function executework(employee: Director | TeacherClass): string {
+    if (isDirector(employee)) {
+        return employee.workDirectorTasks();
+    } else {
+        return employee.workTeacherTasks();
+    }
+}
+
 const student1 = new StudentClass({ firstName: "Godwin", lastName: "Kweku" });
 console.log(student1.displayName());
 console.log(student1.workOnHomework());
@@ -122,6 +134,9 @@ console.log(student1.workOnHomework());
 const student2 = new StudentClass({ firstName: "Kelvin", lastName: "Coffie" });
 console.log(student2.displayName());
 console.log(student2.workOnHomework());
+
+console.log(executework(createEmployee(200)));
+console.log(executework(createEmployee(1000)));
 
 console.log(createEmployee(200));
 console.log(createEmployee(1000));

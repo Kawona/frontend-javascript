@@ -33,6 +33,8 @@ interface StudentInterface {
   displayName(): string;
 }
 
+type Subjects = "Math" | "History";
+
 class StudentClass implements StudentInterface {
   firstName: string;
   lastName: string;
@@ -117,6 +119,14 @@ function createEmployee(salary: number | string): Director | TeacherClass {
 
 function isDirector(employee: Director | TeacherClass): employee is Director {
     return employee instanceof Director;
+}
+
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  } else {
+    return "Teaching History";
+  }
 }
 
 function executework(employee: Director | TeacherClass): string {
